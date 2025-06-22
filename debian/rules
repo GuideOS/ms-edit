@@ -1,0 +1,22 @@
+#!/usr/bin/make -f
+
+PACKAGE := ms-edit
+
+%:
+	dh $@
+
+override_dh_install:
+
+	cargo build --config .cargo/release.toml --release
+
+	install -d debian/$(PACKAGE)/usr/share/applications/
+	install -d debian/$(PACKAGE)/usr/bin/
+	install -d debian/$(PACKAGE)/etc/
+	install -d debian/$(PACKAGE)/usr/share/doc/$(PACKAGE)
+	install -m 644 LICENSE debian/$(PACKAGE)/usr/share/doc/$(PACKAGE)/LICENSE
+	install -m 755  debian/$(PACKAGE)/usr/bin/
+	install -m 644 assets/com.microsoft.edit.desktop debian/$(PACKAGE)/usr/share/applications/
+	install -m 644 assets/edit.svg debian/$(PACKAGE)/usr/share/icons/hicolor/scalable/apps/com.microsoft.edit.svg
+	install -m 755 target/release/edit debian/$(PACKAGE)/usr/bin/
+
+	dh_install

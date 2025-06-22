@@ -1,0 +1,13 @@
+Source: ms-edit
+Section: misc
+Priority: optional
+Maintainer: Actionschnitzel <actionschnitzel@guideos.de>
+Build-Depends: debhelper (>= 9),bash
+Standards-Version: 1.0
+Homepage: https://guideos.de
+
+Package: ms-edit
+Architecture: all
+Depends: ${misc:Depends}, bash
+Description: a simple text editor
+ Edit is an interactive mode-less editor. Use Alt-F to access the menus.
