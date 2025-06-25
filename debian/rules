@@ -6,6 +6,8 @@ PACKAGE := ms-edit
 	dh $@
 
 override_dh_install:
+	rustup install nightly
+	rustup component add rust-src --toolchain nightly-x86_64-unknown-linux-gnu
 	cargo build --config .cargo/release.toml --release
 	install -d debian/$(PACKAGE)/usr/share/applications/
 	install -d debian/$(PACKAGE)/usr/bin/
