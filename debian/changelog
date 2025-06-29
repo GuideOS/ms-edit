@@ -1,3 +1,9 @@
+ms-edit (1.2.0+250629) unstable; urgency=medium
+
+  * Synced with orig.
+
+ -- Actionschnitzel <actionschnitzel@guideos.de>  Sun, 29 Jun 2025 16:48:35 +0200
+
 ms-edit (1.2.0) stable; urgency=medium
 
   * Initial release.
